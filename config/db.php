@@ -12,6 +12,10 @@ define('DB_PASS', getenv('DB_PASS') ?: 'admin123');
 // ── Singleton PDO ────────────────────────────────────────────
 function getDB(): PDO {
     static $pdo = null;
+
+    echo DB_HOST;
+    exit;
+    
     if ($pdo === null) {
         $dsn = sprintf(
             'pgsql:host=%s;port=%s;dbname=%s;sslmode=require',
