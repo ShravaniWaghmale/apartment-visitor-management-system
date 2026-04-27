@@ -1,4 +1,4 @@
- <?php
+<?php
 require_once '../config/db.php';
 bootSession();
 if (!empty($_SESSION['user_id'])) { header('Location: ../dashboard.php'); exit(); }
