@@ -13,7 +13,12 @@ define('DB_PASS', getenv('DB_PASS') ?: 'admin123');
 function getDB(): PDO {
     static $pdo = null;
     if ($pdo === null) {
-        $dsn = sprintf('pgsql:host=%s;port=%s;dbname=%s', DB_HOST, DB_PORT, DB_NAME);
+        $dsn = sprintf(
+            'pgsql:host=%s;port=%s;dbname=%s;sslmode=require',
+            DB_HOST,
+            DB_PORT,
+            DB_NAME
+        );
         try {
             $pdo = new PDO($dsn, DB_USER, DB_PASS, [
                 PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
