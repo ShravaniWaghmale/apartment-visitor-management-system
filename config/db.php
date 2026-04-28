@@ -150,7 +150,7 @@ function navItems(): array {
 
 function renderNav(string $currentFile = ''): string {
     $role = currentUser()['role'];
-    $root = '/visitor-management/';
+    $root = '/';
     $html = '';
     foreach (navItems() as [$icon, $label, $href, $roles]) {
         if (!in_array($role, $roles, true)) continue;
