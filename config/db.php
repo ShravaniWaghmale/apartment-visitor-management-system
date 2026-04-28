@@ -99,7 +99,7 @@ function rootPath(): string {
 }
 
 function assetPath(string $path): string {
-    return (isset($_SERVER['HTTP_HOST']) ? '/' : '/visitor-management/') . ltrim($path, '/');
+    return '/' . ltrim($path, '/');
 }
 
 // ── Overstay checker ─────────────────────────────────────────
@@ -167,7 +167,7 @@ function renderSidebar(string $current = ''): void {
     $s   = getSettings();
     $org = htmlspecialchars($s['org_name'] ?? 'ResidentGuard');
     $ini = strtoupper(substr($u['name'], 0, 1));
-    $logout = '/visitor-management/auth/logout.php';
+    $logout = '/auth/logout.php';
     // unread notifications count
     $notifCount = 0;
     try {

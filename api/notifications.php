@@ -14,7 +14,7 @@ try {
            ->execute([':uid' => $user['id']]);
         // Redirect back if GET
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-            header('Location:/visitor-management/dashboard.php');
+            header('Location:/dashboard.php');
             exit();
         }
         echo json_encode(['success' => true]);

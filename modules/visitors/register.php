@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         flash('success', "✅ Visitor \"$name\" registered & checked in. Visit #$visitId.");
-        header("Location: /visitor-management/modules/badge/print_badge.php?visit=$visitId");
+        header('Location: /modules/badge/print_badge.php?visit=' . $visitId);
         exit();
 
     } catch (Throwable $e) {
@@ -104,7 +104,7 @@ renderSidebar('register');
       <h1 class="page-title">Register Visitor</h1>
       <p class="page-sub">Fill in details and check visitor in</p>
     </div>
-    <a href="/visitor-management/dashboard.php" class="btn-secondary">← Dashboard</a>
+    <a href="/dashboard.php" class="btn-secondary">← Dashboard</a>
   </header>
 
   <?= renderFlash() ?>
@@ -266,7 +266,7 @@ renderSidebar('register');
 
     <div class="form-actions">
       <button type="submit" class="btn-primary" style="padding:13px 36px;">✅ Register & Check In</button>
-      <a href="/visitor-management/dashboard.php" class="btn-secondary">Cancel</a>
+      <a href="/dashboard.php" class="btn-secondary">Cancel</a>
     </div>
   </form>
 </main>
