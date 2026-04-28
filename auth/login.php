@@ -23,7 +23,7 @@ try {
     if (!$user) { header('Location: ../index.php?error=1'); exit(); }
     if (!$user['is_active']) { header('Location: ../index.php?error=inactive'); exit(); }
     if (!password_verify($password, $user['password'])) { header('Location: ../index.php?error=1'); exit(); }
-    if ($user['role_name'] !== $role) { header('Location: ../index.php?error=role'); exit(); }
+    $role = strtolower(trim($_POST['role'] ?? ''));
 
     // Regenerate session ID for security
     session_regenerate_id(true);
