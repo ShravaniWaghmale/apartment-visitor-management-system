@@ -99,7 +99,7 @@ function rootPath(): string {
 }
 
 function assetPath(string $path): string {
-    return '/visitor-management/' . ltrim($path, '/');
+    return (isset($_SERVER['HTTP_HOST']) ? '/' : '/visitor-management/') . ltrim($path, '/');
 }
 
 // ── Overstay checker ─────────────────────────────────────────
